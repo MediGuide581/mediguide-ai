@@ -1,0 +1,158 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#123d78">
+  <meta name="description" content="MediGuide AI provides educational medicine information, safety precautions and trusted source links.">
+  <title>MediGuide AI | Medicine Learning</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="navbar">
+    <a class="brand" href="#">✚ MediGuide <span>AI</span></a>
+    <span class="tag" id="navTag">Medicine information, made simpler</span>
+    <div class="nav-controls">
+      <select id="languageSelect" aria-label="Choose language">
+        <option value="en">English</option>
+        <option value="hi">हिन्दी</option>
+      </select>
+      <button id="themeToggle" class="secondary-btn" type="button">🌙 Dark Mode</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <span class="pill" id="heroPill">Medicine learning assistant</span>
+      <h1 id="heroTitle">Understand medicines better.</h1>
+      <p id="heroIntro">Search educational information and read the original source labels.</p>
+
+      <form id="searchForm" class="search-box">
+        <label class="sr-only" for="medicineInput">Medicine name</label>
+        <input id="medicineInput" type="search"
+          placeholder="Enter a medicine name..." autocomplete="off" required>
+        <button id="searchButton" type="submit">Search</button>
+      </form>
+      <p class="hint" id="searchHint">
+        Local demo entries: Paracetamol, Cetirizine. Online results depend on source availability.
+      </p>
+      <p id="searchStatus" class="status" role="status" aria-live="polite"></p>
+    </section>
+
+    <section class="section">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow" id="databaseEyebrow">LEARN & EXPLORE</span>
+          <h2 id="databaseTitle">Medicine information</h2>
+        </div>
+        <span class="source-badge" id="sourceBadge">Local + online</span>
+      </div>
+
+      <div id="result" class="result hidden" aria-live="polite"></div>
+
+      <div class="info-grid">
+        <article class="info-card">
+          <span class="card-icon">📘</span>
+          <h3 id="featureTitle1">Educational information</h3>
+          <p id="featureText1">Learn about medicine labels and general safety.</p>
+        </article>
+        <article class="info-card">
+          <span class="card-icon">🛡️</span>
+          <h3 id="featureTitle2">Precautions</h3>
+          <p id="featureText2">Read warnings and ask a qualified professional when unsure.</p>
+        </article>
+        <article class="info-card">
+          <span class="card-icon">🔗</span>
+          <h3 id="featureTitle3">Source links</h3>
+          <p id="featureText3">Check original information from trusted public resources.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section assistance" id="doctor-assistance">
+      <div class="assistance-copy">
+        <span class="pill" id="assistancePill">Assistance request</span>
+        <h2 id="assistanceTitle">Doctor-assistance request</h2>
+        <p id="assistanceText">
+          Request help finding an appropriate healthcare professional for your questions.
+        </p>
+        <ul class="benefit-list">
+          <li id="benefit1">A place to describe your general query</li>
+          <li id="benefit2">A request for follow-up by a real provider</li>
+          <li id="benefit3">No automated diagnosis or prescription</li>
+        </ul>
+      </div>
+      <div class="price-card">
+        <p class="price-label" id="priceLabel">Displayed assistance price</p>
+        <div class="price">₹99 <span id="perRequest">/ request</span></div>
+        <p id="priceNote">Demo price only. No payment is collected on this website.</p>
+        <button id="requestAssistance" type="button" class="primary-btn">
+          Request assistance
+        </button>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contact">
+      <span class="eyebrow" id="contactEyebrow">GET IN TOUCH</span>
+      <h2 id="contactTitle">Contact us</h2>
+      <p id="contactIntro">Send a general question or ask about the assistance service.</p>
+
+      <form id="contactForm" class="contact-form">
+        <div class="form-row">
+          <div class="field">
+            <label id="nameLabel" for="contactName">Your name</label>
+            <input id="contactName" name="name" maxlength="80" required
+              placeholder="Enter your name" autocomplete="name">
+          </div>
+          <div class="field">
+            <label id="emailLabel" for="contactEmail">Email address</label>
+            <input id="contactEmail" name="email" type="email" maxlength="150" required
+              placeholder="you@example.com" autocomplete="email">
+          </div>
+        </div>
+        <div class="field">
+          <label id="subjectLabel" for="contactSubject">Topic</label>
+          <select id="contactSubject" name="subject" required>
+            <option value="general" id="optionGeneral">General question</option>
+            <option value="assistance" id="optionAssistance">Doctor-assistance request</option>
+            <option value="website" id="optionWebsite">Website feedback</option>
+          </select>
+        </div>
+        <div class="field">
+          <label id="messageLabel" for="contactMessage">Message</label>
+          <textarea id="contactMessage" name="message" rows="5" maxlength="1500"
+            required placeholder="Write your general question here..."></textarea>
+        </div>
+        <p class="privacy-note" id="privacyNote">
+          Do not enter medical records, passwords, payment details or other sensitive personal information.
+          This demo does not send or save your message to a server.
+        </p>
+        <button class="primary-btn" id="sendMessage" type="submit">Submit demo form</button>
+        <p id="contactStatus" class="status" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <section class="notice">
+      <strong id="noticeTitle">Important health notice</strong>
+      <p id="noticeText">
+        This website is for education only, not diagnosis or treatment. Online drug labels can be incomplete
+        or differ by country and product. Do not start, stop or change medication based on this site.
+        Ask a doctor or pharmacist for personal advice.
+      </p>
+    </section>
+
+    <section class="sources">
+      <h2 id="sourcesTitle">Reference sources</h2>
+      <ul>
+        <li><a href="https://open.fda.gov/apis/drug/label/" target="_blank" rel="noopener noreferrer">openFDA — Drug label API documentation</a></li>
+        <li><a href="https://dailymed.nlm.nih.gov/dailymed/" target="_blank" rel="noopener noreferrer">DailyMed — Drug labeling information</a></li>
+        <li><a href="https://www.nhp.gov.in/" target="_blank" rel="noopener noreferrer">National Health Portal of India</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer id="footerText">© 2026 MediGuide AI · Educational demo</footer>
+</body>
+</html>
